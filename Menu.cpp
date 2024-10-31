@@ -6,8 +6,7 @@
 // ImplementaciÃ³n del constructor predeterminado
 Menu::Menu() : eleccion_principal(0), eleccion_cliente(0) {}
 
-void Menu::caratula() 
-{
+void Menu::caratula() {
     std::cout << "       #####   ######    #####    #####    #####   ######    ######   ######   #####    #####" << std::endl;
     std::cout << "      ##   ##   ##  ##  ##   ##  ##   ##  ##   ##   ##  ##     ##       ##    ##   ##  ##   ##" << std::endl;
     std::cout << "      ##   ##   ##  ##  ##   ##  ##       ##   ##   ##  ##     ##       ##    ##   ##  ##" << std::endl;
@@ -23,8 +22,7 @@ void Menu::caratula()
     std::cout << "\nTu opcion: " << std::endl;
     std::cin >> eleccion_principal;
 
-    switch (eleccion_principal) 
-    {
+    switch (eleccion_principal) {
         case 1:
             std::system(CLEAR_COMMAND);
             std::cout << "                 _/       _/                               _/" << std::endl;
@@ -39,13 +37,10 @@ void Menu::caratula()
             std::cout << "\n\nTU OPCION ES: " << std::endl;
             std::cin >> eleccion_cliente;
 
-            if (eleccion_cliente == 1) 
-            {
+            if (eleccion_cliente == 1) {
                 Cliente pers("Juana", "60794260", "457821");
                 pers.mostrarCliente();
-            } 
-            else if (eleccion_cliente == 2) 
-            {
+            } else if (eleccion_cliente == 2) {
                 Cliente nuevoCliente("Nuevo", "00000000", "123456");
                 nuevoCliente.registrarCliente();
             }
@@ -63,13 +58,10 @@ void Menu::caratula()
             std::cout << "\n\nTU OPCION ES: " << std::endl;
             std::cin >> eleccion_abogado;
 
-            if (eleccion_abogado == 1)
-            {
+            if (eleccion_abogado == 1) {
                 Abogado pers1(3000.00, "Abogado", "Juana", "Perez", 1, "60794260", "juana@gmail.com", 20240101, "Civil");
                 pers1.mostrarDatos();
-            } 
-            else if (eleccion_cliente == 2) 
-            {
+            } else if (eleccion_cliente == 2) {
                 Cliente nuevoCliente("Nuevo", "00000000", "123456");
                 std::cout<<"Proximamente... solo en los abogaditos tu terror";
             }
