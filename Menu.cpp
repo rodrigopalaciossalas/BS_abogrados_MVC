@@ -59,8 +59,6 @@ void Menu::caratula() {
             std::cin >> eleccion_abogado;
 
             if (eleccion_abogado == 1) {
-                Abogado pers1(3000.00, "Abogado", "Juana", "Perez", 1, "60794260", "juana@gmail.com", 20240101, "Civil");
-                pers1.mostrarDatos();
             } else if (eleccion_cliente == 2) {
                 Cliente nuevoCliente("Nuevo", "00000000", "123456");
                 std::cout<<"Proximamente... solo en los abogaditos tu terror";

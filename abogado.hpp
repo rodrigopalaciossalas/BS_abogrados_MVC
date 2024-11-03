@@ -1,6 +1,46 @@
 #ifndef ABOGADO_HPP
 #define ABOGADO_HPP
+#include "ID.hpp"
+#include "Fecha.hpp"
+#include <iostream>
 
+class Abogado
+{
+    public:
+        // Datos principales de la clase Abogado
+        char* nombre;
+        char* apellido;
+        char* telefono;
+        Fecha fechaContratacion;  
+        ID id_abogado; 
+        // Datos secundarios de la clase
+        double salario;  
+        char* puesto;
+        char* gmail;
+        char* especialidad;
+
+        // Métodos de entrada de datos
+        void mostrarDatos();
+        void setSalario(double _salario);
+        void setPuesto(const char* _puesto);
+        void setNombre(const char* _nombre);
+        void setApellido(const char* _apellido);
+        void setIDEmpleado(int _ID_Empleado);
+        void setTelefono(const char* _telefono);
+        void setGmail(const char* _gmail);
+        void setEspecialidad(const char* _especialidad);
+
+        // Constructor
+        Abogado(const char* _nombre, const char* _apellido, const char* _telefono, const char* _especialidad,
+                double _salario, const char* _puesto, const char* _gmail, 
+                int dia, int mes, int anio);
+
+        // Destructor
+        ~Abogado();
+};
+
+#endif // ABOGADO_HPP
+/*
 class Abogado 
 {
     public:
@@ -21,44 +61,5 @@ class Abogado
 
         // Método para mostrar datos
         void mostrarDatos();
-};
-
-#endif // ABOGADO_HPP
-
-
-/* punteros para class abogado ideas
-class Abogado 
-{
-    public:
-        double* salario;
-        char* puesto;
-        char* nombre;
-        char* apellido;
-        int* ID_Empleado;
-        char* telefono;
-        char* gmail;
-        int* fecha_contratacion;
-        char* especialidad;
-
-        // Metodos entrada de datos
-        void mostrarDatos();
-        void setSalario(double* _salario);
-        void setPuesto(char* _puesto);
-        void setNombre(char* _nombre);
-        void setApellido(char* _apellido);
-        void setID_Empleado(int* _ID_Empleado);
-        void setTelefono(char* _telefono);
-        void setGmail(char* _gmail);
-        void setFechaContratacion(int* _fecha_contratacion);
-        void setEspecialidad(char* _especialidad);
-
-        // Constructor
-        Abogado(double* salario, char* puesto, char* nombre, char* apellido, 
-                int* ID_Empleado, char* telefono, char* gmail, 
-                int* fecha_contratacion, char* especialidad);
-       
-        // Destructor
-        ~Abogado();
-
 };
 */
