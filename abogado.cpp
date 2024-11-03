@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Abogado.hpp"
 #include "ID.hpp"
+#include "Fecha.hpp"
 
 // Función para calcular la longitud de una cadena
 int c_Longitud(const char* ptm) 
@@ -16,7 +17,7 @@ int c_Longitud(const char* ptm)
 // Función  para copiar cadenas
 void copiarCadena(char*& destino, const char* origen) 
 {
-    delete[] destino; 
+    delete[] destino; // Liberar memoria no se bien si esta implementacion es correcta
     destino = new char[c_Longitud(origen) + 1];
     for (int i = 0; i < c_Longitud(origen); ++i) 
     {
@@ -28,8 +29,7 @@ void copiarCadena(char*& destino, const char* origen)
 // Constructor
 Abogado::Abogado(const char* _nombre, const char* _apellido, const char* _telefono, 
                  const char* _especialidad, double _salario, const char* _puesto, 
-                 const char* _gmail, int dia, int mes, int anio) 
-    : fechaContratacion(dia, mes, anio), salario(_salario)
+                 const char* _gmail, int dia, int mes, int anio) : fechaContratacion(dia, mes, anio), salario(_salario)
 {
     copiarCadena(nombre, _nombre);
     copiarCadena(apellido, _apellido);
@@ -51,15 +51,14 @@ Abogado::~Abogado()
 }
 
 // Métodos void
-
 void Abogado::mostrarDatos() 
 {
     std::cout << "ID: Abg." << id_abogado.obtenerID()
-              << "Nombre: " << nombre << "\nApellido: " << apellido 
-              << "\nTelefono: " << telefono << "\nEspecialidad: " << especialidad 
+              << "Nombre: " << nombre << "\nApellido: " << apellido
+              << "\nTelefono: " << telefono << "\nEspecialidad: " << especialidad
               << "\nSalario: " << salario << "\nPuesto: " << puesto 
               << "\nGmail: " << gmail << "\nFecha de contratacion: ";
-    fechaContratacion.imprimirFecha(); // Asegúrate de que el método imprimirFecha esté implementado en la clase Fecha
+    fechaContratacion.imprimirFecha(); 
 }
 
 void Abogado::setSalario(double _salario) 
@@ -97,7 +96,56 @@ void Abogado::setEspecialidad(const char* _especialidad)
     copiarCadena(especialidad, _especialidad);
 }
 
+void Abogado::Abogado_datos_obligatorios()
+{
+    std::cout << "Ingrese el nombre del abogado: ";
+    std::cin.getline(nombre, 100);
 
+    std::cout << "Ingrese el apellido del abogado: ";
+    std::cin.getline(apellido, 100);
+
+    std::cout << "Ingrese el telefono del abogado: ";
+    std::cin.getline(telefono, 100);
+
+
+    std::cout << "Ingrese el puesto del abogado: ";
+    std::cin.ignore();  
+    std::cin.getline(puesto, 100);
+
+    int dia, mes, anio;
+    std::cout << "Ingrese la fecha de contratación (dia mes anio): ";
+    std::cin >> dia >> mes >> anio;
+
+}
+void Abogado::Abogado_datos_opcionales()
+{
+    int eleccion;
+    std::cout << "Ingrese el dato que desea modificar: \n";
+    std::cout << "1. Gmail\n";
+    std::cout << "2. Salario\n";
+    std::cout << "3. Especialidad\n";
+    std::cin >> eleccion;
+
+  if (eleccion == 1)
+  {
+    std::cout << "Ingrese el gmail del abogado (opcional): ";
+    std::cin.ignore();  
+    std::cin.getline(gmail, 100);
+  }
+ else if (eleccion == 2)
+    {
+    std::cout << "Ingrese el salario del abogado: ";
+    std::cin >> salario;
+    }
+    else if (eleccion == 3)
+    {
+    std::cout << "Ingrese la especialidad del abogado: ";
+    std::cin.ignore();
+    std::cin.getline(especialidad, 100);
+    }
+}
+
+//codigo comentado para referencia
 /**
 int c_Longitud(const char* ptm) 
 {
@@ -249,8 +297,6 @@ void Abogado::setEspecialidad(const char* _especialidad)
 }
 
 **/
-
-
 /*
 Abogado::Abogado(double _salario, const char _puesto[50], const char _nombre[50], const char _apellido[50], 
                  int _ID_Empleado, const char _telefono[15], const char _gmail[50], 
