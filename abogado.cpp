@@ -145,6 +145,127 @@ void Abogado::Abogado_datos_opcionales()
     }
 }
 
+/*
+// Constructor
+Abogado::Abogado(const char* _nombre, const char* _apellido, const char* _telefono, 
+                 const char* _especialidad, double _salario, const char* _puesto, 
+                 const char* _gmail, int dia, int mes, int anio) : fechaContratacion(dia, mes, anio), salario(_salario)
+{
+
+    puntero.copiarCadena(nombre, _nombre);
+    puntero.copiarCadena(apellido, _apellido);
+    puntero.copiarCadena(telefono, _telefono);  
+    puntero.copiarCadena(especialidad, _especialidad);
+    puntero.copiarCadena(puesto, _puesto);
+    puntero.copiarCadena(gmail, _gmail);
+}
+
+// Destructor
+Abogado::~Abogado()
+{
+    delete[] nombre;
+    delete[] apellido;
+    delete[] telefono;
+    delete[] especialidad;
+    delete[] puesto;
+    delete[] gmail;
+}
+
+// Métodos void
+void Abogado::mostrarDatos() 
+{
+    std::cout << "ID: Abg." << id_abogado.obtenerID()
+              << "Nombre: " << nombre << "\nApellido: " << apellido
+              << "\nTelefono: " << telefono << "\nEspecialidad: " << especialidad
+              << "\nSalario: " << salario << "\nPuesto: " << puesto 
+              << "\nGmail: " << gmail << "\nFecha de contratacion: ";
+    fechaContratacion.imprimirFecha(); 
+}
+
+void Abogado::setSalario(double _salario) 
+{
+    salario = _salario;
+}
+
+void Abogado::setPuesto(const char* _puesto) 
+{
+    puntero.copiarCadena(puesto, _puesto);
+}
+
+void Abogado::setNombre(const char* _nombre) 
+{
+    puntero.copiarCadena(nombre, _nombre);
+}
+
+void Abogado::setApellido(const char* _apellido) 
+{
+    puntero.copiarCadena(apellido, _apellido);
+}
+
+void Abogado::setTelefono(const char* _telefono) 
+{
+    puntero.copiarCadena(telefono, _telefono);
+}
+
+void Abogado::setGmail(const char* _gmail) 
+{
+    puntero.copiarCadena(gmail, _gmail);
+}
+
+void Abogado::setEspecialidad(const char* _especialidad) 
+{
+    puntero.copiarCadena(especialidad, _especialidad);
+}
+
+void Abogado::Abogado_datos_obligatorios()
+{
+    std::cout << "Ingrese el nombre del abogado: ";
+    std::cin.getline(nombre, 100);
+
+    std::cout << "Ingrese el apellido del abogado: ";
+    std::cin.getline(apellido, 100);
+
+    std::cout << "Ingrese el telefono del abogado: ";
+    std::cin.getline(telefono, 100);
+
+
+    std::cout << "Ingrese el puesto del abogado: ";
+    std::cin.ignore();  
+    std::cin.getline(puesto, 100);
+
+    int dia, mes, anio;
+    std::cout << "Ingrese la fecha de contratación (dia mes anio): ";
+    std::cin >> dia >> mes >> anio;
+
+}
+void Abogado::Abogado_datos_opcionales()
+{
+    int eleccion;
+    std::cout << "Ingrese el dato que desea modificar: \n";
+    std::cout << "1. Gmail\n";
+    std::cout << "2. Salario\n";
+    std::cout << "3. Especialidad\n";
+    std::cin >> eleccion;
+
+  if (eleccion == 1)
+  {
+    std::cout << "Ingrese el gmail del abogado (opcional): ";
+    std::cin.ignore();  
+    std::cin.getline(gmail, 100);
+  }
+ else if (eleccion == 2)
+    {
+    std::cout << "Ingrese el salario del abogado: ";
+    std::cin >> salario;
+    }
+    else if (eleccion == 3)
+    {
+    std::cout << "Ingrese la especialidad del abogado: ";
+    std::cin.ignore();
+    std::cin.getline(especialidad, 100);
+    }
+}
+*/
 //codigo comentado para referencia
 /**
 int c_Longitud(const char* ptm) 

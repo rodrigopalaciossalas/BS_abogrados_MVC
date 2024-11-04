@@ -3,7 +3,6 @@
 #include "ID.hpp"
 #include "Fecha.hpp"
 #include <iostream>
-
 class Abogado
 {
     public:
@@ -18,19 +17,18 @@ class Abogado
         char* puesto;
         char* gmail;
         char* especialidad;
-
         // Métodos de entrada de datos
         void mostrarDatos();
         void setSalario(double _salario);
         void setPuesto(const char* _puesto);
         void setNombre(const char* _nombre);
         void setApellido(const char* _apellido);
-        void setIDEmpleado(int _ID_Empleado);
         void setTelefono(const char* _telefono);
         void setGmail(const char* _gmail);
         void setEspecialidad(const char* _especialidad);
         void Abogado_datos_obligatorios();
         void Abogado_datos_opcionales();
+
         // Constructor
         Abogado(const char* _nombre, const char* _apellido, const char* _telefono, const char* _especialidad,
                 double _salario, const char* _puesto, const char* _gmail, 
