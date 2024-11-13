@@ -1,6 +1,6 @@
 #ifndef ID_HPP
 #define ID_HPP
-
+#include <iostream>
 class ID 
 {
 public:

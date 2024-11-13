@@ -1,22 +1,15 @@
-#ifndef A_PUNTEROS_HPP
-#define A_PUNTEROS_HPP
+#ifndef A_punteros_hpp
+#define A_punteros_hpp
+#include <iostream>
 
-class A_puntero 
+class A_puntero
 {
-public:
-    char* ptm;     
-    char* destino; 
-    char* origen;  
-
-    // Métodos
-    int c_Longitud(const char* _ptm);
-    void copiarCadena( char* _origen); 
-
+  public:  
+    int c_Longitud(const char* ptm);
+    void copiarCadena(char*& destino, const char* origen);
+    void imprimirCadena(const char* cadena);
     // Constructor
-    A_puntero( char* origen); 
-    
-    // Destructor
-    ~A_puntero();
+    A_puntero();
 };
 
-#endif // A_PUNTEROS_HPP
+#endif // A_punteros 

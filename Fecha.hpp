@@ -10,7 +10,7 @@ public:
     int anio;
 
     Fecha(int d, int m, int a);
-    void imprimirFecha();
+    void imprimirFecha() const;
 };
 
 #endif

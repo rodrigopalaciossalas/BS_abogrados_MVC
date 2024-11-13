@@ -2,7 +2,7 @@
 # Initialization
 #############################################################
 
-project( C++_Base_de_Datos_pruebas )
+project( C++_intentos)
 
 message( "Source of application:  ${CMAKE_SOURCE_DIR} " )
 message( "Subproject name:  ${PROJECT_NAME} " )
