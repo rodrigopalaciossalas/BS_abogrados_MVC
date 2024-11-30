@@ -1,23 +1,25 @@
+// AbogadoController.hpp
 #ifndef ABOGADO_CONTROLLER_HPP
 #define ABOGADO_CONTROLLER_HPP
 
 #include "AbogadoModel.hpp"
 #include "AbogadoView.hpp"
 
-class AbogadoController 
-{
+class AbogadoController {
 private:
-    Abogado* abogado;
+    AbogadoModel* modelo;
     AbogadoView* vista;
 
 public:
-    AbogadoController(Abogado* _abogado, AbogadoView* _vista);
+    AbogadoController(AbogadoModel* modelo, AbogadoView* vista);
 
-    void mostrarDatos();
-    void actualizarSalario(double salario);
-    void actualizarPuesto(const char* puesto);
-    void ingresarDatosObligatorios();
-    void ingresarDatosOpcionales();
+    void iniciar();  // Lógica principal del menú
+    void agregarAbogado();
+    void listarAbogados();
+    void buscarAbogado();
+    void eliminarAbogado();
+    void modificarAbogado();
 };
 
 #endif // ABOGADO_CONTROLLER_HPP
+

@@ -1,13 +1,13 @@
+// ID.hpp
 #ifndef ID_HPP
 #define ID_HPP
-#include <iostream>
-class ID 
-{
+
+class ID {
+private:
+    static int contadorID;
+
 public:
-    static int contador; // Contador estático para generar IDs únicos
-    int id; 
-    ID(); // Constructor
-    int obtenerID();// Método para obtener el ID
+    static int generarID(); // Método estático para generar un nuevo ID
 };
 
 #endif // ID_HPP

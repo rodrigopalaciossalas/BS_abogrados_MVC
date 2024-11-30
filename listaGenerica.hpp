@@ -4,7 +4,8 @@
 #include <iostream>
 #include <fstream>
 
-class ListaGenerica {
+class ListaGenerica 
+{
 private:
     char** datos;     // Matriz dinámica para almacenar líneas de texto
     int cantidad;     // Cantidad de líneas almacenadas

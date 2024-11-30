@@ -1,15 +1,8 @@
- #include "ID.hpp"
+// ID.cpp
+#include "ID.hpp"
 
-// Inicializar el contador estático
-int ID::contador = 0;
+int ID::contadorID = 0; // Inicializamos el contador en 0.
 
-// Constructor
-ID::ID() 
-{
-    id = ++contador;
-}
-
-int ID::obtenerID() 
-{
-    return id;
+int ID::generarID() {
+    return ++contadorID; // Incrementa y devuelve el nuevo ID
 }

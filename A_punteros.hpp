@@ -14,6 +14,8 @@ public:
 
     // Método para imprimir una cadena
     static void imprimirCadena(const char* cadena);
+
+    static char* dividirCadena(char* cadena, const char delimitador, int& inicio);
 };
 
 #endif // A_PUNTEROS_HPP
