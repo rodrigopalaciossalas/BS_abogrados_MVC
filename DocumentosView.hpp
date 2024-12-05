@@ -6,7 +6,7 @@
 
 class DocumentosView {
 public:
-    void displayDocumentos(const Documentos& doc) const;
+    void mostrarDocumentos(const Documentos& doc) const;
 };
 
 #endif

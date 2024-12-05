@@ -2,7 +2,6 @@
 #define FACTURAS_HPP
 
 #include "Economia.hpp"
-
 class Facturas : public Economia 
 {
 private:

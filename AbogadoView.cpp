@@ -1,16 +1,40 @@
 // AbogadoView.cpp
 #include "AbogadoView.hpp"
-
+#include "ColorManipulation.hpp"
 void AbogadoView::mostrarMenu() 
 {
-    std::cout << "\n=== Sistema de Gestión de Abogados ===\n";
-    std::cout << "1. Agregar abogado\n";
-    std::cout << "2. Listar abogados\n";
-    std::cout << "3. Buscar abogado por ID\n";
-    std::cout << "4. Eliminar abogado por ID\n";
-    std::cout << "5. Modificar abogado\n";
-    std::cout << "6. Salir\n";
-    std::cout << "Seleccione una opción: ";
+    resetCursor();
+    clearScreen();
+    setTextColor(YELLOW);
+    std::cout << "\n===== Sistema de Gestion de Abogados =====\n";
+    resetColor();
+    setTextColor(GREEN);
+    std::cout << "1."; 
+    resetColor();
+    std::cout << "Agregar abogado\n";
+    setTextColor(GREEN);
+    std::cout << "2."; 
+    resetColor();
+    std::cout << "Listar abogados\n";
+    setTextColor(GREEN);
+    std::cout << "3.";
+    resetColor();
+    std::cout << "Buscar abogado por ID\n";
+    setTextColor(GREEN);
+    std::cout << "4.";
+    resetColor();
+    std::cout << "Eliminar abogado por ID\n";
+    setTextColor(GREEN);
+    std::cout << "5.";
+    resetColor();
+    std::cout << "Modificar abogado\n";  // Nueva opción
+    setTextColor(GREEN);
+    std::cout << "6."; 
+    resetColor();
+    std::cout << "Salir\n";
+    setTextColor(YELLOW);
+    std::cout << "Seleccione una opcion: ";
+    resetColor();
 }
 
 int AbogadoView::solicitarOpcion() {
@@ -25,11 +49,14 @@ void AbogadoView::mostrarMensaje(const char* mensaje) {
 
 void AbogadoView::mostrarListaAbogados(Abogado** abogados, int cantidad) {
     if (cantidad == 0) {
+        setTextColor(BRIGHT_RED);
         mostrarMensaje("No hay abogados registrados.");
+        resetColor();
         return;
     }
-
-    std::cout << "\n=== Lista de Abogados ===\n";
+    setTextColor(YELLOW);
+    std::cout << "\n==== Lista de Abogados ====\n";
+    resetColor();
     for (int i = 0; i < cantidad; ++i) {
         std::cout << "ID: " << abogados[i]->obtenerID() << ", Nombre: " << abogados[i]->getNombres()
                   << " " << abogados[i]->getApellidos() << "\n";
@@ -61,7 +88,7 @@ void AbogadoView::solicitarDatosAbogado(Abogado*& abogado) {
     std::cout << "Salario: ";
     std::cin >> salario;
 
-    std::cout << "Fecha de contratación (dd mm yyyy): ";
+    std::cout << "Fecha de contratacion (dd mm yyyy): ";
     std::cin >> dia >> mes >> anio;
 
     // Crear el nuevo abogado con los datos ingresados
@@ -76,17 +103,47 @@ int AbogadoView::solicitarID(const char* mensaje) {
     return id;
 }
 void AbogadoView::mostrarOpcionesModificacion() {
+    setTextColor(YELLOW);
     std::cout << "\nSeleccione el atributo a modificar:\n";
-    std::cout << "1. Nombre\n";
-    std::cout << "2. Apellido\n";
-    std::cout << "3. Teléfono\n";
-    std::cout << "4. Correo\n";
-    std::cout << "5. Especialidad\n";
-    std::cout << "6. Salario\n";
-    std::cout << "7. Puesto\n";
-    std::cout << "8. Fecha de Contratación\n";
-    std::cout << "9. Cancelar\n";
-    std::cout << "Opción: ";
+    setTextColor(YELLOW);
+    std::cout << "1.";
+    resetColor();
+    std::cout << " Nombre\n";
+    setTextColor(YELLOW);
+    std::cout << "2.";
+    resetColor();
+    std::cout << " Apellido\n";
+    setTextColor(YELLOW);
+    std::cout << "3.";
+    resetColor();
+    std::cout << " Telefono\n";
+    setTextColor(YELLOW);
+    std::cout << "4.";
+    resetColor();
+    std::cout << " Correo\n";
+    setTextColor(YELLOW);
+    std::cout << "5.";
+    resetColor();
+    std::cout << " Especialidad\n";
+    setTextColor(YELLOW);
+    std::cout << "6.";
+    resetColor();
+    std::cout << " Salario\n";
+    setTextColor(YELLOW);
+    std::cout << "7.";
+    resetColor();
+    std::cout << " Puesto\n";
+    setTextColor(YELLOW);
+    std::cout << "8.";
+    resetColor();
+    std::cout << " Fecha de Contratación\n";
+    setTextColor(YELLOW);
+    std::cout << "9.";
+    resetColor();
+    std::cout << " Cancelar\n";
+    setTextColor(YELLOW);
+    std::cout << "Opcion: ";
+    resetColor();
 }
 
 void AbogadoView::solicitarNuevoValor(char* buffer, const char* mensaje) {

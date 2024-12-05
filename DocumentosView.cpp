@@ -1,6 +1,6 @@
 #include "DocumentosView.hpp"
 
-void DocumentosView::displayDocumentos(const Documentos& doc) const {
+void DocumentosView::mostrarDocumentos(const Documentos& doc) const {
     std::cout << "Titulo: " << doc.getTitulo() << std::endl;
     std::cout << "ID: " << doc.getID() << std::endl;
     std::cout << "Fecha de Creacion: ";

@@ -2,6 +2,7 @@
 #include "AbogadoModel.hpp"
 #include <iostream>
 #include <fstream>
+#include "ColorManipulation.hpp"
 
 AbogadoModel::AbogadoModel()
     : abogados(nullptr), cantidad(0), capacidad(2) 
@@ -45,11 +46,15 @@ void AbogadoModel::eliminarAbogadoPorID(int id) {
             }
             cantidad--;
             guardarEnArchivo("abogados.txt");
+            setTextColor(BRIGHT_YELLOW);
             std::cout << "Abogado con ID " << id << " eliminado.\n";
+            resetColor();
             return;
         }
     }
+    setTextColor(BRIGHT_RED);
     std::cout << "No se encontró un abogado con el ID " << id << ".\n";
+    resetColor();
 }
 
 Abogado* AbogadoModel::buscarAbogadoPorID(int id) {
@@ -63,7 +68,9 @@ Abogado* AbogadoModel::buscarAbogadoPorID(int id) {
 
 void AbogadoModel::listarAbogados() {
     if (cantidad == 0) {
+        setTextColor(BRIGHT_YELLOW);
         std::cout << "No hay abogados registrados.\n";
+        resetColor();
         return;
     }
     for (int i = 0; i < cantidad; i++) {
@@ -77,7 +84,9 @@ void AbogadoModel::listarAbogados() {
 void AbogadoModel::cargarDesdeArchivo(const char* nombreArchivo) {
     std::ifstream archivo(nombreArchivo);
     if (!archivo.is_open()) {
+        setTextColor(BRIGHT_RED);
         std::cerr << "No se pudo abrir el archivo " << nombreArchivo << "\n";
+        resetColor();
         return;
     }
 
@@ -175,7 +184,9 @@ void AbogadoModel::cargarDesdeArchivo(const char* nombreArchivo) {
 void AbogadoModel::guardarEnArchivo(const char* nombreArchivo) {
     std::ofstream archivo(nombreArchivo, std::ios::trunc);
     if (!archivo.is_open()) {
+        setTextColor(BRIGHT_RED);
         std::cerr << "No se pudo abrir el archivo " << nombreArchivo << "\n";
+        resetColor();
         return;
     }
     for (int i = 0; i < cantidad; i++) {

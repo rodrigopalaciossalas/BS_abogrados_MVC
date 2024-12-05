@@ -4,7 +4,8 @@
 #include "Persona.hpp"
 #include "Fecha.hpp"
 #include "id.hpp"
-class Abogado : public Persona {
+class Abogado : public Persona 
+{
 private:
     char* especialidad;
     double salario;

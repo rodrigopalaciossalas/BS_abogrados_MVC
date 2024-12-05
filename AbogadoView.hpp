@@ -4,8 +4,7 @@
 
 #include "Abogado.hpp"
 
-class AbogadoView 
-{
+class AbogadoView {
 public:
     
     void mostrarMenu();  // Muestra el menú principal
